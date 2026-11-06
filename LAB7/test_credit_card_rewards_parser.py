@@ -3,15 +3,21 @@ from credit_card_rewards_parser import mask_card_number, parse_transaction, pars
 
 @given(st.text() | st.none())
 def test_mask_card_number_no_crash(s):
-    # To-Do: Using try and except complete this function.
-    pass
+    try:
+        mask_card_number(s)
+    except (TypeError, ValueError, AttributeError):
+        pass
 
 @given(st.text() | st.none())
 def test_parse_transaction_no_crash(s):
-    # To-Do: Using try and except complete this function.
-    pass
+    try:
+        parse_transaction(s)
+    except (TypeError, ValueError, IndexError, AttributeError):
+        pass
 
 @given(st.text() | st.none())
 def test_parse_statement_total_no_crash(s):
-    # To-Do: Using try and except complete this function.
-    pass
+    try:
+        parse_statement_total(s)
+    except (TypeError, ValueError, IndexError, AttributeError):
+        pass
